@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.main-heading{
+    text-align: center;
+}
+
+.sep{
+    margin:2% 0% 2% 0;
+}
+.statetag{
+    
+    width: 50%;
+    padding: 10px;
+    margin: 2px;
+    border: 1px solid #222222;
+    cursor: pointer;
+    margin: 0 auto;
+}
+.statetag:hover{
+
+    color: #FFF;
+    background-color: #222222;
+    cursor: pointer;
+}
+
+
+.descriptor .backbutton{
+    font-size: 15px;
+    padding: 10px;
+    margin: 5px;
+    background-color: #222222;
+    color: #FFF;
+    border: 1px solid #222222;
+    border-radius: 2px;
+}
+
+.descriptor .backbutton:hover{
+    color: #222222;
+    background-color: #FFF;
+    transition: 0.2s ease;
+}
