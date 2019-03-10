@@ -1,54 +1,299 @@
-*{
+ *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
-
-.main-heading{
-    text-align: center;
-}
-
-.sep{
-    margin:2% 0% 2% 0;
-}
-.statetag{
     
-    width: 50%;
+}
+
+*:not(i){
+  font-family: 'Quicksand', sans-serif;
+}
+.mega{
+  color:white;
+}
+.mega:hover{
+  color:#2f2f2f;
+}
+.fixedsidebar{
+  width: 50px;
+  background-color: #0173e3;
+  height: 100%;
+  position: fixed;
+  box-shadow: -1px 2px 11px 3px #cfcfcf;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+ .cross{
+  position: fixed;
+  background-color:#0173e3;
+  width: 100%;
+  z-index: 10000000;
+  font-size: 40px;
+  margin-left: 95%;
+}
+.form-parent .cross i{
+  
+  color: #FFF;
+}
+.fixedsidebar .icons i{
+  font-size: 30px;
+}
+
+ .parent{
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+ }
+ .parent .left{
+     background-color: #FFF;
+     height: 100%;
+     width: 20%;
+     padding: 1% 5%;
+     
+ }
+ .parent .left a{
+   text-decoration: none;
+   color: #2f2f2f;
+   /* transform: scale3d(0.8); */
+ }
+ .parent .left a:hover{
+   font-weight: bold;
+ }
+ .parent .right{
+     padding: 0.2% 1% 1% 1%;
+     background-color: #f0f1f3;
+     height: 100%;
+     width: 80%;
+ }
+.searchbar{
     padding: 10px;
+    background-color: #f6f9ff;
+    z-index: 10;
+}
+ .searchbar .typeahead{
+     background-color: #f6f9ff;
+     width: 20%;
+     display: block;
+     font-size: 12px;
+     margin: 0 auto;
+     padding: 5px 15px;
+     border-radius: 30px;
+     border: 1.2px solid #0173e3;
+     outline: none;
+ }
+ .typeahead-parent{
+    position: fixed;
+    left: 40%;
+    width: 20%;
+    
+    border-radius: 4px;
+
+ }
+ .statetag{
+    
+    width: 100%;
+    padding: 4px;
     margin: 2px;
-    border: 1px solid #222222;
     cursor: pointer;
     margin: 0 auto;
+    background-color: rgba(246, 249, 255,0.9);
+    font-size: 12px;
+    border-radius: 1px;
 }
+.statetag h2{
+    font-size: 14px;
+    padding-left:10px;
+}
+
 .statetag:hover{
 
     color: #FFF;
     background-color: #222222;
     cursor: pointer;
 }
+ .right .imp1{
+     padding: 10px;
+     display: flex;
+    flex-direction: row;
+    height: 50vh;
+ }
+ 
+ .right .chart{
+     padding: 10px;
+    width: 75%;
+    background-color: #FFF;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow:-1px 2px 11px 3px #cfcfcf;
+ }
 
+ .right .state{
+    
+     margin-left: 15px;
+     padding: 10px;
+     width: 25%;
+     background-color: #FFF;
+     border-radius: 4px;
+     box-shadow:-1px 2px 11px 3px #cfcfcf;
+     height: 100%;
+     
+     
+ }
+ .right .state #mapContainer{
+     height: 67%;
+     width: 100%;
+     border-radius: 4px;
+     margin: 0 auto;
+ }
+ .right .state .introstate h3{
+    /* text-align: center; */
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 5px;
+ }
+ .right .state .introstate p{
+     font-weight: 400;
+     margin-top: 2px;
+     font-size: 14px;
+ }
+ .right .imp2{
+     padding: 0 20px;
+     height: 35vh;
+     width: 100%;
+     margin-top: 4px;
+     display: flex;
+     flex-direction: row;
+     align-content: space-around;
+     justify-content: space-around;
+ }
 
-.descriptor .backbutton{
-    font-size: 15px;
-    padding: 10px;
-    margin: 5px;
-    background-color: #222222;
-    color: #FFF;
-    border: 1px solid #222222;
-    border-radius: 2px;
+ 
+ .right .imp2 .cmn{
+    width: 30%;
+    height: 100%;
+    padding: 1% 0px 0px 5%;
+    background-color: #FFF;
+    border-radius: 4px;
+    box-shadow:-1px 2px 11px 3px #cfcfcf;
+ }
+ .parameters h3{
+     font-size: 25px;
+ }
+ /* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
 }
 
-.descriptor .backbutton:hover{
-    color: #222222;
-    background-color: #FFF;
-    transition: 0.2s ease;
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 1.25em; height: 1.25em;
+  border: 2px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '\2713\0020';
+  position: absolute;
+  top: .15em; left: .22em;
+  font-size: 1.3em;
+  line-height: 0.8;
+  color: #09ad7e;
+  transition: all .2s;
+  font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  border: 2px dotted blue;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 2px solid #4778d9!important;
+}
+
+
+.form-parent{
+  background-color: #0173e3;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+.form-parent .feedback{
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  height: 70%;
+  background-color: #FFF;
+  border-radius: 4px;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+}
+.feedback input{
+  width: 80%;
+  margin: 2% auto;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #222222;
+}
+.feedback button{
+  width: 50%;
+  border-radius: 4px;
+  border: none;
+  padding: 5px;
+  margin: 5% auto;
+  background: #558aec;
+  color: #FFF;
+  box-shadow: 1px 1px 1px 1px #558aec;
 }

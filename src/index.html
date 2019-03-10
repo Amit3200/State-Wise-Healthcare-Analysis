@@ -1,17 +1,83 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Stateanalysis</title>
-  
+
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="node_modules/chart.js/src/chart.js"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css"
+    integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css"
+    integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css"
+    integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/regular.css"
+    integrity="sha384-IG162Tfx2WTn//TRUi9ahZHsz47lNKzYOp0b6Vv8qltVlPkub2yj9TVwzNck6GEF" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css"
+    integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous">
 </head>
+
 <body>
   <app-root></app-root>
-  
+  <script>
+    let x;
+    boom = () => {
+      let platform = new H.service.Platform({
+        'app_id': '6JlYgWYLpJPciW8HwI0k',
+        'app_code': 'eu7LBF1J2dUhehWQXuOMrg'
+      });
+
+      // Retrieve the map container (map target element):
+      let targetElement = document.getElementById('mapContainer');
+
+      // Get the default map types from the platform object:
+      let defaultLayers = platform.createDefaultLayers();
+      
+      // Instantiate the map:
+      let map = new H.Map(
+        document.getElementById('mapContainer'),
+        defaultLayers.normal.map,
+        {
+          zoom: 6,
+          
+          
+          
+          center: { lat: JSON.parse(localStorage.getItem("activestate")).lat, lng: JSON.parse(localStorage.getItem("activestate")).long }
+        });
+
+      // Add the venue layer to the map:
+      map.addLayer(defaultLayers.venues);
+    };
+
+
+    window.onload = () => {
+      let x = document.getElementsByClassName("realchart")[0];
+      x.style.height = "100%";
+      x.style.width = "100%";
+      boom();
+    };
+
+
+    document.getElementsByClassName("mega")[0].addEventListener("click",()=>{
+      console.log("ll");
+      
+    /*  let x  = document.getElementsByClassName("fixedsidebar")[0];
+      x.style.width = '100%';
+      */
+    });
+
+  </script>
 </body>
+
 </html>
